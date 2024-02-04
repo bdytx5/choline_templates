@@ -2,7 +2,7 @@ conda_version: 23.7.2
 hardware_filters:
   cpu_ram: '>10'
   disk_space: '>20'
-  gpu_name: RTX_A4000 
+  gpu_name: RTX_A2000 
 ignore:
 - '*.md'
 - .dockerignore
@@ -55,6 +55,6 @@ setup_script: |
   sudo apt install python3-pip -y
   pip install Flask==2.3.2 || pip3 install Flask==2.3.2 -y
   git clone https://github.com/bdytx5/choline_templates.git
-  python3 choline_templates/api.py > ~/.choline/chat_api_out.txt 2>&1 &
+  sudo python3 choline_templates/api.py > ~/.choline/chat_api_out.txt 2>&1 &
   sleep 10 
-  curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d '{"prompt": "hello"}' 
+  sudo curl -X POST http://127.0.0.1:5000/predict -H "Content-Type: application/json" -d '{"prompt": "hello"}' 
