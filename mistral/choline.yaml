@@ -54,6 +54,7 @@ setup_script: |
   sudo apt install python3 -y
   sudo apt install python3-pip -y
   pip install Flask==2.3.2 || pip3 install Flask==2.3.2 -y
+  pip install watchdog==2.3.2 || pip3 install watchdog==2.3.2 -y
   git clone https://github.com/bdytx5/choline_templates.git
   sudo python3 choline_templates/jank_ssh_api.py > ~/.choline/chat_api_out.txt 2>&1 &
   sleep 10 
